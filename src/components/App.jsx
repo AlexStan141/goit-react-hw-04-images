@@ -39,7 +39,7 @@ export const App = () => {
     setSearchValue(searchValue);
     if (imagesToAdd.length < 12) {
       setLoadMoreButtonVisibility(false);
-      if (imagesToAdd.length == 0) {
+      if (imagesToAdd.length === 0) {
         Notiflix.Notify.failure('No results match your search');
       } else {
         Notiflix.Notify.failure('You reached the end of search result');

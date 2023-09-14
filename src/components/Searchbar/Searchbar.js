@@ -7,6 +7,7 @@ export default function Searchbar({ onSubmit }) {
 
   const handleChange = evt => {
     const { name, value } = evt.target;
+    console.log(name);
     setSearch(value);
   };
 
