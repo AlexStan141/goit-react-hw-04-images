@@ -68,13 +68,16 @@ export const App = () => {
   return (
     <>
       <Searchbar
-        onSubmit={values => {
+        onSubmit={() => {
           init();
           setLoaderVisibility(true);
           setTimeout(async () => {
-            addFirstImages(values.search);
+            addFirstImages(searchValue);
             setLoaderVisibility(false);
           }, 2000);
+        }}
+        workWithProps={value => {
+          setSearchValue(value);
         }}
       ></Searchbar>
       <ImageGallery
