@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { getData, getImagesSlice } from './apiFunctions';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
-import { BallTriangle } from 'react-loader-spinner';
 import css from './App.module.css';
 import Modal from './Modal/Modal';
 import Notiflix from 'notiflix';
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const [images, setImages] = useState([]);
@@ -97,18 +97,7 @@ export const App = () => {
           }}
         ></Button>
       )}
-      <div className={css.loaderContainer}>
-        <BallTriangle
-          height={50}
-          width={50}
-          radius={5}
-          color="#4fa94d"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass={{}}
-          wrapperStyle=""
-          visible={loaderVisibility}
-        />
-      </div>
+      {loaderVisibility && <Loader></Loader>}
       {modalImageSrc && (
         <Modal
           imageSrc={modalImageSrc}
