@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import css from './Searchbar.module.css';
 import PropTypes from 'prop-types';
 
-export default function Searchbar({ onSubmit }) {
-  const [search, setSearch] = useState('');
-
+export default function Searchbar({ onSubmit, workWithProps }) {
   const handleChange = evt => {
     const { name, value } = evt.target;
     console.log(name);
-    setSearch(value);
+    workWithProps(value);
   };
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    onSubmit({ search: search });
+    onSubmit();
   };
 
   return (

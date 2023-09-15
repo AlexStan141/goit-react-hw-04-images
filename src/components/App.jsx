@@ -10,7 +10,7 @@ import Notiflix from 'notiflix';
 
 export const App = () => {
   const [images, setImages] = useState([]);
-  const [totalHits, setTotalHits] = useState(0);
+  const [totalHits, setTotalHits] = useState(500);
   const [loadMoreButtonVisibility, setLoadMoreButtonVisibility] =
     useState(false);
   const [searchValue, setSearchValue] = useState('');
